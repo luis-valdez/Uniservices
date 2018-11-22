@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% extends 'users/forms.py %'}
+{% load staticfiles%}
+
+{% block content %}
+
+<img src="{% static 'img/logo-unison.png' %}" alt="logo-unison" class="logo-unison">
+<h2>Login</h2>
+<form method="post" class="form-group">
+        {% csrf_token %}
+           {% for field in form %}
+            <div class="form-control">
+              {{ field.errors }}
+              {{ field.label_tag }}  {{ field }}
+              
+            </div>
+            {% endfor %}
+      <button type="submit" class="btn btn-primary">Inicia sesión</button>
+    </form>
+{% endblock %}

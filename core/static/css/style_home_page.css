@@ -30,3 +30,8 @@ h1{
     font-weight: bold;
     color: #FFCD00;
 }
+
+.logo-unison{
+    max-width: 360px;
+    display: flex;
+}

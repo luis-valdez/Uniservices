@@ -4,12 +4,15 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-4"><h2>Bienvenido!</h2></div>
-        <div class="col-12 col-md-4"><button class="btn main-btn">Inicia Sesion</button></div>
+        <div class="col-12 col-md-4"><a href="{% url 'login' %}"><button class="btn main-btn">Inicia Sesion</button></a></div>
         <div class="col-12 col-md-4"><button class="btn main-btn">Ver lista de servicios</button></div>
     </div>
 </div>
 <!-- TERMINA EL POST-HEADER  -->
-
+{% if user.is_authenticated %}
+<p>Hi {{ user.username }}
+<p><a href="{% url 'logout' %}">Log out</a></p>
+{% endif %}
 <!-- INICIA EL CARROUSEL -->
 <div class="carrousel ">
     <p>Aqui estaria el carrousel</p>
