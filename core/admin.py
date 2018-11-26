@@ -1,4 +1,5 @@
 from django.contrib import admin
-from .models import Image
+from .models import Campus, Division
 
-admin.site.register(Image)
+admin.site.register(Campus)
+admin.site.register(Division)

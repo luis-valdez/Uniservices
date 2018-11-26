@@ -5,6 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Uniservices</title>
+    <!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
     
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style_home_page.css' %}">
@@ -18,8 +24,8 @@
     <!-- INICIA EL HEADER -->
     <div class="row" >
         <div class="header col-12">
-            <a href="{% url 'home_page' %}" class="top-menu"><img src="{% static 'img/owl.svg' %}" alt="Buho" class="img-buho"></a>
-            <a href="{% url 'home_page' %}" class="top-menu"><h1>Universidad de Sonora</h1></a>
+            <a href="{% url 'home_page' %}" class="top-menu col-1" ><img src="{% static 'img/owl.svg' %}" alt="Buho" class="img-buho"></a>
+            <a href="{% url 'home_page' %}" class="top-menu col-11"><h1>Universidad de Sonora</h1></a>
         </div>
     </div>
     <!-- TERMINA EL HEADER  -->

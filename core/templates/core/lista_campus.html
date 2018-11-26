@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load staticfiles%}
+{% block content %}
+<!-- SIN LOGGEAR -->
+    <!-- INICIA EL POST-HEADER -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
+            <div class="col-12 col-md-6 link_class"><a href="{% url 'login' %}"><p class="black-font text-center">Inicia Sesion</p></a></div>
+        </div>
+        <h1>Selecciona tu campus</h1>
+        <div class="row">
+            
+            {% for campus in campuss %}
+            <div class="col-6 col-md-4">
+                <a href="{% url 'lista_divisiones' pk=campus.pk %}">
+                <img src="{{campus.imagen.url}}" class="img-servicios" alt="{{campus.nombre}}">
+                </a>
+                {{ campus.nombre }}
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+    <!-- TERMINA EL POST-HEADER  -->
+<!-- SIN LOGGEAR -->
+{% endblock %}

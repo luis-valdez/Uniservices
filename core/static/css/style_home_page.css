@@ -1,20 +1,29 @@
 *{
     font-family: 'Montserrat', sans-serif;
 }
+a { color:#666666;
+    text-decoration:none;
+}
+    
+a:hover { text-decoration : none;
+}
+
 .header{
     background-color: #2339AC;
     display: flex;
     margin-bottom: 1em;
+    
 }
 
 .img-buho{
-    height: 2em;
-    padding: 0.5em;
+    height: 36px;
+    padding: 0.1em;
 }
 
 .main-btn{
     background-color: #FFCD00;
     margin-bottom: 0.5em;
+    font-size: 16px;
 }
 
 .carrousel{
@@ -23,6 +32,7 @@
 
 .footer{
     background-color: #FFCD00;
+    font-size: 16px;
 }
 h1{
     font-size: 36px;
@@ -34,4 +44,35 @@ h1{
 .logo-unison{
     max-width: 360px;
     display: flex;
+}
+
+.img-car{
+    width: 640px; 
+    height: 480px; 
+    margin:  auto; 
+    display: block; 
+}
+
+.link_class {
+    background-color: #DAE6F3;
+    border: 2px, solid;
+    color:#fff;
+    font-size: 16px;
+    text-decoration: none;
+    
+}
+
+.white-font{
+    color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-servicios{
+    max-width: 150px;
+    max-height: 150px;
+    border-radius:50%;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
