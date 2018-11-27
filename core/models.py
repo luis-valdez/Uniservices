@@ -13,7 +13,18 @@ class Campus(models.Model):
 
 class Division(models.Model):
     id = models.IntegerField(primary_key=True)
-    id_campus = models.ForeignKey(Campus, on_delete=models.CASCADE)
+    campus = models.ForeignKey(Campus, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
-    imagen = models.ImageField()
+    imagen = models.ImageField(null=False, blank=False)
+
+class Servicio(models.Model):
+    divisiones = models.ManyToManyField(Division)
+    nombre = models.CharField(max_length=100)
+    ubicacion = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=100)
+    duracion = models.DurationField()
+    capacidad = models.IntegerField()
+    imagen = models.ImageField(null=False, blank=False)
+
+
 

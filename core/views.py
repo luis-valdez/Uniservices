@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Campus
+from .models import Campus, Division, Servicio
 from django.http import HttpResponseRedirect
 
 
@@ -12,5 +12,10 @@ def lista_campus(request):
     return render(request, 'core/lista_campus.html', {'campuss': campuss})
 
 def lista_divisiones(request, pk):
-    division = get_object_or_404(Campus, pk=pk)
-    return render(request, 'core/lista_divisiones', {'division': division})
+    divisiones = Division.objects.all().filter(campus_id=pk)
+    return render(request, 'core/lista_divisiones.html', {'divisiones': divisiones})
+
+def lista_servicios(request, pk):
+    servicios = Servicio.objects.all().filter(divisiones__id=pk)
+    print(servicios)
+    return render(request, 'core/lista_servicios.html', {'servicios': servicios})

@@ -5,16 +5,18 @@
     <!-- INICIA EL POST-HEADER -->
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 link_class"><a href="{% url 'login' %}"><p class="black-font text-center">Servicios</p></a></div>
+            <div class="col-12 col-md-6 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
             <div class="col-12 col-md-6 link_class"><a href="{% url 'login' %}"><p class="black-font text-center">Inicia Sesion</p></a></div>
         </div>
-        <h1>Selecciona tu campus</h1>
+        <h1>Selecciona tu division</h1>
         <div class="row">
             
-            {% for campus in campuss %}
+            {% for division in divisiones %}
             <div class="col-6 col-md-4">
-                <img src="{{campus.imagen.url}}" class="img-servicios" alt="{{campus.nombre}}">
-                {{ campus.nombre }}
+                <a href="{% url 'lista_servicios' pk=division.pk %}">
+                <img src="{{division.imagen.url}}" class="img-servicios" alt="{{division.nombre}}">
+                {{ division.nombre }}
+                </a>
             </div>
             
             {% endfor %}
