@@ -76,3 +76,11 @@ h1{
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.titulo-recuardo{
+    background-color: #2E3192;
+    color:#fff;
+    text-align: center;
+}
+.recuadro{
+    background-color: #eaeaea;
+}

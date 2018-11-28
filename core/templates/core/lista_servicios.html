@@ -5,21 +5,37 @@
     <!-- INICIA EL POST-HEADER -->
     <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
+                <div class="col-12 col-md-6 link_class">
+                    <a href="{% url 'lista_campus' %}">
+                        <p class="black-font text-center">
+                            Servicios
+                        </p>
+                    </a>
+                </div>
                 <div class="col-12 col-md-6 link_class"><a href="{% url 'login' %}"><p class="black-font text-center">Inicia Sesion</p></a></div>
             </div>
-            <h1>Lista de servicios</h1>
+
             <div class="row">
-                
-                {% for servicio in servicios %}
-                <div class="col-6 col-md-4">
-                    <img src="{{servicio.imagen.url}}" class="img-servicios" alt="{{servicio.nombre}}">
-                    {{ servicio.nombre }}
+                <div class="col-12 titulo-recuardo">
+                    <p>Lista de Servicios</p>
                 </div>
-                
-                {% endfor %}
             </div>
-        </div>
+                
+            {% for servicio in servicios %}
+                <div class="row">
+                    
+                    <div class="col-12 recuadro">
+                    <a href="{% url 'info_servicio' pk=servicio.pk %}">
+                    {{ servicio.nombre }}
+                    <br>
+                    {{ servicio.descripcion }}
+                    </a>
+                    </div>
+                    
+                </div>
+                    
+            {% endfor %} 
+    </div>
         <!-- TERMINA EL POST-HEADER  -->
     <!-- SIN LOGGEAR -->
 {% endblock %}
