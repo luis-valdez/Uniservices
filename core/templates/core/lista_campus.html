@@ -29,10 +29,11 @@
             
             {% for campus in campuss %}
             <div class="col-6 col-md-4">
-                <a href="{% url 'lista_divisiones' pk=campus.pk %}">
+                
                 <img src="{{campus.imagen.url}}" class="img-servicios" alt="{{campus.nombre}}">
-                </a>
+                <a href="{% url 'lista_divisiones' pk=campus.pk %}">
                 {{ campus.nombre }}
+                </a>
             </div>
             
             {% endfor %}

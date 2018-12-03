@@ -22,10 +22,17 @@
 
     <!-- -->
     <!-- INICIA EL HEADER -->
-    <div class="row" >
-        <div class="header col-12">
-            <a href="{% url 'home_page' %}" class="top-menu col-1" ><img src="{% static 'img/owl.svg' %}" alt="Buho" class="img-buho"></a>
-            <a href="{% url 'home_page' %}" class="top-menu col-11"><h1>Universidad de Sonora</h1></a>
+    <div class="row header" >
+        <div class=" col-1">
+            <a href="{% url 'home_page' %}" class="top-menu" >
+                <img src="{% static 'img/owl.svg' %}" alt="Buho" class="img-buho">
+            </a>
+        </div>
+        <div class="col-6">
+            <a href="{% url 'home_page' %}" class="top-menu">
+                <h1>Universidad de Sonora</h1>
+            </a>
+
         </div>
     </div>
     <!-- TERMINA EL HEADER  -->

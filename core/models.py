@@ -3,6 +3,7 @@ from django.conf import settings
 from django.utils import timezone
 
 
+
 class Campus(models.Model):
     id = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
