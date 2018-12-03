@@ -16,8 +16,9 @@ a:hover { text-decoration : none;
 }
 
 .img-buho{
-    height: 36px;
-    padding: 0.1em;
+    height: 7vh;
+    display: block;
+    margin-left: 1.5em;
 }
 
 .main-btn{
@@ -35,8 +36,7 @@ a:hover { text-decoration : none;
     font-size: 16px;
 }
 h1{
-    font-size: 36px;
-    
+    font-size: 6vh;
     font-weight: bold;
     color: #FFCD00;
 }
@@ -86,4 +86,7 @@ h1{
 }
 .center{
     text-align: center;
+}
+.inliner{
+    display: inline;
 }
