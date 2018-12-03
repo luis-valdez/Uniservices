@@ -23,17 +23,14 @@
     <!-- -->
     <!-- INICIA EL HEADER -->
     <div class="row header" >
-        <div class=" col-1">
-            <a href="{% url 'home_page' %}" class="top-menu" >
+        <div class="">
+            <a href="{% url 'home_page' %}" class="" >
                 <img src="{% static 'img/owl.svg' %}" alt="Buho" class="img-buho">
             </a>
         </div>
-        <div class="col-6">
-            <a href="{% url 'home_page' %}" class="top-menu">
-                <h1>Universidad de Sonora</h1>
+        <a href="{% url 'home_page' %}" class="" >
+                <h1 class="inliner">Universidad de Sonora</h1>
             </a>
-
-        </div>
     </div>
     <!-- TERMINA EL HEADER  -->
     {% block content %}
@@ -41,7 +38,9 @@
     <!-- INICIA EL FOOTER -->
     <footer class="fixed-bottom footer">
         <p>Aqui estaria el footer</p>
-        
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Log out</a>
+        {% endif %}
     </footer>
      <!-- TERMINA EL FOOTER  -->
 </body>

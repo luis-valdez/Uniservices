@@ -4,18 +4,20 @@
 {% block content %}
 <!-- INICIA EL POST-HEADER -->
 <div class="container">
+    {% if user.is_authenticated %}
+    <div class="center"><h2>¡Bienvenido, {{ user.username }}!</h2></div>
+    {% endif %}
     <div class="row">
-        <div class="col-12 col-md-3"><h2>Bienvenido!</h2></div>
+        {% if not user.is_authenticated %}
+        <div class="col-12 col-md-3"><h2>¡Bienvenido!</h2></div>
         <div class="col-12 col-md-3"><a href="{% url 'login' %}"><button class="btn main-btn">Inicia Sesion</button></a></div>
         <div class="col-12 col-md-3"><a href="{% url 'signup' %}"><button class="btn main-btn">Crear Cuenta</button></a></div>
         <div class="col-12 col-md-3"><a href="{% url 'lista_campus' %}"><button class="btn main-btn">Lista de servicios</button></a></div>
+        {% endif %}
     </div>
 </div>
 <!-- TERMINA EL POST-HEADER  -->
-{% if user.is_authenticated %}
-<p>Hi {{ user.username }}
-<p><a href="{% url 'logout' %}">Log out</a></p>
-{% endif %}
+
 <!-- INICIA EL CARROUSEL -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
