@@ -28,8 +28,9 @@
                 <img src="{% static 'img/owl.svg' %}" alt="Buho" class="img-buho">
             </a>
         </div>
-        <h1 class="inliner">Universidad de Sonora</h1>
-
+        <a href="{% url 'home_page' %}" class="" >
+                <h1 class="inliner">Universidad de Sonora</h1>
+            </a>
     </div>
     <!-- TERMINA EL HEADER  -->
     {% block content %}
@@ -37,6 +38,8 @@
     <!-- INICIA EL FOOTER -->
     <footer class="fixed-bottom footer">
         <p>Aqui estaria el footer</p>
+        <p><a href="{% url 'logout' %}">Log out</a></p>
+
         
     </footer>
      <!-- TERMINA EL FOOTER  -->

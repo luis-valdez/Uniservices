@@ -5,7 +5,6 @@
 <!-- INICIA EL POST-HEADER -->
 <div class="container">
     {% if user.is_authenticated %}
-    <p><a href="{% url 'logout' %}">Log out</a></p>
     <div class="center"><h2>¡Bienvenido, {{ user.username }}!</h2></div>
     {% endif %}
     <div class="row">
