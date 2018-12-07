@@ -5,9 +5,11 @@ from django.utils import timezone
 
 
 class Campus(models.Model):
-    id = models.PositiveSmallIntegerField(primary_key=True)
+    #id = models.PositiveSmallIntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
     imagen = models.ImageField(null=False, blank=False)
+    def publish(self):
+	    self.save()
 
     def __str__(self):
 	    return self.nombre
@@ -26,6 +28,4 @@ class Servicio(models.Model):
     duracion = models.DurationField()
     capacidad = models.IntegerField()
     imagen = models.ImageField(null=False, blank=False)
-
-
 
