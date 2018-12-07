@@ -8,7 +8,6 @@ from django.contrib.auth.models import AbstractUser, UserManager
 
 
 class CustomUserCreationForm(UserCreationForm):
-
     class Meta(UserCreationForm.Meta):
         model = Usuario
         fields = ('username', 'email')
