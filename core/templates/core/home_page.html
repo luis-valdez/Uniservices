@@ -31,6 +31,9 @@
         <div class="col-12 col-md-4"><a href="{% url 'login' %}"><button class="btn main-btn">Inicia Sesion</button></a></div>
         <div class="col-12 col-md-4"><a href="{% url 'lista_campus' %}"><button class="btn main-btn">Lista de servicios</button></a></div>
         {% endif %}
+        {% if user.is_authenticated %}
+        <div class="col-12 col-md-3"><a href="{% url 'lista_campus' %}"><button class="btn main-btn">Lista de servicios</button></a></div>
+        {% endif %}
     </div>
 </div>
 <!-- TERMINA EL POST-HEADER  -->

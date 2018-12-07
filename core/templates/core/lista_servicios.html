@@ -4,13 +4,14 @@
 <!-- SIN LOGGEAR -->
     <!-- INICIA EL POST-HEADER -->
     <div class="container">
-            
-
             <div class="row">
                 {% if not user.is_authenticated %}
-                    <div class="col-12 col-md-6 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
-                    <div class="col-12 col-md-6 link_class"><a href="{% url 'login' %}"><p class="black-font text-center">Inicia Sesion</p></a></div>
-                {% endif %}
+                <div class="col-12 col-md-6 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
+                <div class="col-12 col-md-6 link_class"><a href="{% url 'login' %}"><p class="black-font text-center">Inicia Sesion</p></a></div>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <div class="col-12 col-md-6 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
+            {% endif %}
                 <div class="col-12 titulo-recuardo">
                     <p>Lista de Servicios</p>
                 </div>
@@ -18,7 +19,6 @@
                 
             {% for servicio in servicios %}
                 <div class="row">
-                    
                     <div class="col-12 recuadro">
                     <a href="{% url 'info_servicio' pk=servicio.pk %}">
                     {{ servicio.nombre }}

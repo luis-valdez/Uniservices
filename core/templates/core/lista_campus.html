@@ -9,6 +9,9 @@
                 <div class="col-12 col-md-6 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
                 <div class="col-12 col-md-6 link_class"><a href="{% url 'login' %}"><p class="black-font text-center">Inicia Sesion</p></a></div>
             {% endif %}
+            {% if user.is_authenticated %}
+            <div class="col-12 col-md-6 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
+            {% endif %}
                 <div class="col-12 titulo-recuardo">
                     <p>Selecciona tu campus</p>
                 </div>
@@ -16,10 +19,11 @@
         <div class="row">
             
             {% for campus in campuss %}
-            <div class="col-6 col-md-4">
-                
-                <img src="{{campus.imagen.url}}" class="img-servicios" alt="{{campus.nombre}}">
-                <a href="{% url 'lista_divisiones' pk=campus.pk %}">
+            <div class="col-6 col-md-4 centered">
+                <a href="{% url 'lista_divisiones' pk=campus.pk %}" class="centered">
+                    <img src="{{campus.imagen.url}}" class="img-servicios" alt="{{campus.nombre}}">
+                </a>
+                <a href="{% url 'lista_divisiones' pk=campus.pk %}" class="centered">
                 {{ campus.nombre }}
                 </a>
             </div>
