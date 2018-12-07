@@ -18,15 +18,21 @@
         <div class="col-12 titulo-recuardo">
             <p>Servicio</p>
         </div>
-
     </div>
     <div class="row">
-        {{ servicio.nombre }}
-        <br>
-        {{ servicio.ubicacion }}
-        <br>
-        {{ servicio.descripcion }}
-        <img src="{{servicio.imagen.url}}" class="img-car" alt="{{ servicio.nombre }}">
+        <div class="col-sm">
+            <div class="nameServ"><b>Nombre:</b></div>
+            <h3 class="">{{ servicio.nombre }}</h3>
+            <div class="nameServ"><b>Ubicación:</b></div>
+            <h4>{{ servicio.ubicacion }}</h4>
+            <div class="nameServ"><b>Descripción:</b></div>
+           <p>{{ servicio.descripcion }}</p>
+        </div>
+        
+
+        <div class="col-sm">
+            <img src="{{servicio.imagen.url}}" class="serviceDescriptionImg" alt="{{ servicio.nombre }}">
+        </div>
 
     </div>
 </div>
