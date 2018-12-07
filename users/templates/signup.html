@@ -1,19 +1,27 @@
-{% extends 'core/base.html' %}
-{% load staticfiles%}
+<!-- templates/signup.html -->
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet"> 
+    
+  </head>
 
-{% block content %}
-
-<img src="{% static 'img/logo-unison.png' %}" alt="logo-unison" class="logo-unison">
-<h2>Login</h2>
-<form method="post" class="form-group">
-        {% csrf_token %}
-           {% for field in form %}
-            <div class="form-control">
-              {{ field.errors }}
-              {{ field.label_tag }}  {{ field }}
-              
-            </div>
-            {% endfor %}
-      <button type="submit" class="btn btn-primary">Inicia sesión</button>
-    </form>
-{% endblock %}
+  <body>
+    <h2>Regístrate</h2>
+    <form method="post" class="form-group">
+       {% csrf_token %}
+       {% for field in form %}
+        <div class="form-control">
+          {{ field.errors }}
+          {{ field.label_tag }}  {{ field }}
+          
+        </div>
+        {% endfor %}
+        <br>
+        <button type="submit" class="btn btn-primary buttons" >Regístrate</button>
+    </form>  
+  </body>
+  
+</html>

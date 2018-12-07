@@ -1,0 +1,19 @@
+<!-- templates/registration/login.html -->
+{% load static %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
+<h2>Inicia sesión</h2>
+
+<form method="post" class="form-group">
+    {% csrf_token %}
+       {% for field in form %}
+        <div class="form-control">
+          {{ field.errors }}
+          {{ field.label_tag }}  {{ field }}
+          
+        </div>
+        {% endfor %}
+  <button type="submit" class="btn btn-primary">Inicia sesión</button>
+</form>

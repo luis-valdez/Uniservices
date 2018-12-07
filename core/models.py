@@ -2,8 +2,6 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
-
-
 class Campus(models.Model):
     id = models.PositiveSmallIntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
