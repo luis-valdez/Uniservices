@@ -2,8 +2,8 @@
 {% load static %}
 {% load staticfiles %}
 {% block content %}
-<!-- ESTUDIANTE -->
 
+<!-- ESTUDIANTE -->
 {% if user.is_authenticated and user.es_estudiante %}
 <div class="container">
     <div class="row">
@@ -14,15 +14,9 @@
            <p class="text-right">Estudiante<p>
           </div>
     </div>
-    
-     <div class="row">
-        <div class="col-12 col-md-3 link_class"><a href="{% url 'home_page' %}"><p class="black-font text-center">Inicio</p></a></div>
-        <div class="col-12 col-md-3 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
-        <div class="col-12 col-md-3 link_class"><a href="{% url 'home_page' %}"><p class="black-font text-center">Mi tutor</p></a></div>
-        <div class="col-12 col-md-3 link_class"><a href="{% url 'logout' %}"><p class="black-font text-center">Cerrar Sesion</p></a></div>
-    </div>
 </div>              
 {% endif %}
+<!--TERMINA ESTUDIANTE -->
 
 <!-- TUTOR -->
 {% if user.is_authenticated and user.es_tutor %}
@@ -35,34 +29,26 @@
                <p class="text-right">Tutor<p>
               </div>
         </div>
-        
-         <div class="row">
-            <div class="col-12 col-md-3 link_class"><a href="{% url 'home_page' %}"><p class="black-font text-center">Inicio</p></a></div>
-            <div class="col-12 col-md-3 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
-            <div class="col-12 col-md-3 link_class"><a href="{% url 'home_page' %}"><p class="black-font text-center">Mi tutor</p></a></div>
-            <div class="col-12 col-md-3 link_class"><a href="{% url 'logout' %}"><p class="black-font text-center">Cerrar Sesion</p></a></div>
+</div>    
+{% endif %}
+<!--TERMINA TUTOR -->
+
+<!-- ENCARGADO DE SERVICIO -->
+{% if user.is_authenticated and user.es_encargado_servicio %}
+<div class="container">
+        <div class="row">
+            <div class="col-6">
+                  <p class="text-left">¡Bienvenido, {{ user.username }}!<p>
+             </div>
+            <div class="col-6">
+               <p class="text-right">Administrador de Servicio<p>
+              </div>
         </div>
 </div>    
 {% endif %}
+<!--TERMINA ENCARGADO DE SERVICIO -->
 
 
-{% if not user.is_authenticated %}
-<div class="container">
-
-        
-         <div class="row">
-            <div class="col-12 col-md-4 link_class"><a href="{% url 'home_page' %}"><p class="black-font text-center">Inicio</p></a></div>
-            <div class="col-12 col-md-4 link_class"><a href="{% url 'login' %}"><p class="black-font text-center">Inicia Sesion</p></a></div>
-            <div class="col-12 col-md-4 link_class"><a href="{% url 'lista_campus' %}"><p class="black-font text-center">Servicios</p></a></div>
-
-        </div>
-</div>     
-{% endif %}
- 
-
-   
-
-<!-- TERMINA EL POST-HEADER  -->
 
 <!-- INICIA EL CARROUSEL -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -72,7 +58,6 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
@@ -85,7 +70,6 @@
             <img src="{% static 'img/equipoadsi3.jpg' %}" alt="" class="img-car">
         </div>
     </div>
-
     <!-- Controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -96,6 +80,5 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
 <!-- TERMINA EL CARROUSEL  -->
 {% endblock %}
