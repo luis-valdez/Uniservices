@@ -1,7 +1,21 @@
 {% extends 'core/base.html' %}
 {% load staticfiles%}
 {% block content %}
+    <!-- ENCARGADO DE SERVICIO -->
+    {% if user.is_authenticated and user.es_encargado_servicio %}
+    <div class="container">
+            <div class="row">
+                <div class="col-6">
+                      <p class="text-left">¡Bienvenido, {{ user.username }}!<p>
+                 </div>
+                <div class="col-6">
+                   <p class="text-right">Administrador de Servicio<p>
+                  </div>
+            </div>
+    </div>  
 <div class="container">
+{% endif %}
+<!--TERMINA ENCARGADO DE SERVICIO -->
 
     <div class="row">
         <div class="col-12 titulo-recuardo">

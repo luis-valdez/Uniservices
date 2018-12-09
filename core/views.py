@@ -23,3 +23,6 @@ def lista_servicios(request, pk):
 def info_servicios(request, pk):
     servicio = get_object_or_404(Servicio, pk=pk)
     return render(request, 'core/info_servicio.html', {'servicio': servicio})
+
+def mis_servicios(request):
+    return render(request, 'core/mis_servicios.html')
