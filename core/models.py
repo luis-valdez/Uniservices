@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from users.models import Usuario
 
 class Campus(models.Model):
     id = models.PositiveSmallIntegerField(primary_key=True)
@@ -24,6 +25,4 @@ class Servicio(models.Model):
     duracion = models.DurationField()
     capacidad = models.IntegerField()
     imagen = models.ImageField(null=False, blank=False)
-
-
-
+    encargado = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=0)

@@ -1,7 +1,6 @@
 # users/models.py
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
-from core.models import Servicio
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Usuario(AbstractUser):
@@ -23,4 +22,3 @@ class Estudiante(models.Model):
 class Encargado_Servicio(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
     nombre = models.CharField(max_length=100)
-    servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)

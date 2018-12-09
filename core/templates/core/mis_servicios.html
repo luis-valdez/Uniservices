@@ -27,6 +27,7 @@
   </div>
               
   {% for servicio in servicios %}
+    {% if servicio.encargado == user.username %}
       <div class="row">
           <div class="col-12 recuadro">
               <a href="{% url 'info_servicio' pk=servicio.pk %}">
@@ -35,6 +36,7 @@
                   {{ servicio.descripcion }}
               </a>
           </div>
-      </div>        
+      </div>
+    {% endif %}        
   {% endfor %} 
 {% endblock %}
