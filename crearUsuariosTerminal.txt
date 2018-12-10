@@ -1,0 +1,10 @@
+Crear usuarios desde la terminal
+1: Entrar al enviroment de django
+2: >> python manage.py shell
+3: >> from django.contrib.auth.models import Usuario
+4: >> Usuario.objects.create(username="encargado_servicio1",
+      password="hola1234", es_encargado_servicio=True, email="hola@gmail.com")
+(Para comprobar)
+5: >> Users.objects.all()
+
+**SI NO TE JALA EL USUSARIO CAMBIALE LA CONTRASEÑA DESDE EL ADMIN DE DJANGO Y DEBERIA DE JALAR
