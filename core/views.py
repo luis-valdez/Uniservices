@@ -27,3 +27,6 @@ def info_servicios(request, pk):
 def mis_servicios(request):
     servicios = Servicio.objects.all()
     return render(request, 'core/mis_servicios.html', {'servicios': servicios})
+
+def nuevo_servicio(request):
+    return render(request, 'core/nuevo_servicio.html')
