@@ -13,6 +13,7 @@ class Tutor(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
     nombre = models.CharField(max_length=100)
     num_empleado = models.IntegerField()
+    imagen = models.ImageField(null=True, blank=True)
 
 class Estudiante(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)

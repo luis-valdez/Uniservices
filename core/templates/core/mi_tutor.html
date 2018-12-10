@@ -2,5 +2,26 @@
 {% load static %}
 {% load staticfiles %}
 {% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-12 titulo-recuardo">
+                <p>Servicio</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="nameServ"><b>Nombre:</b></div>
+                <h3 class="">{{ tutor.nombre }}</h3>
+                <div class="nameServ"><b>Correo electronico:</b></div>
+                <h4>{{ usuario_tutor.email }}</h4>
+            </div>
+            
+    
+            <div class="col-sm">
+                <img src="{{tutor.imagen.url}}" class="serviceDescriptionImg" alt="{{ tutor.nombre }}">
+            </div>
+    
+        </div>
+</div>
 {{tutor.nombre}}
 {% endblock %}

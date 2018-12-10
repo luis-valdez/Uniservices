@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'users',
+    'fullcalendar',
+    'moment',
 ]
 AUTH_USER_MODEL = 'users.Usuario'
 

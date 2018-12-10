@@ -1,0 +1,67 @@
+{% load static %}
+{% load staticfiles %}
+{% load fullcalendar_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uniservices</title>
+    <!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style_home_page.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/owl.svg' %}"/>
+
+    <!-- Fullcalendar -->
+    <link rel='stylesheet' href="{% static 'css/fullcalendar.min.css' %}" />
+    <!--<script src="{% static 'js/es-us.js' %}"></script>-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/moment.min.js' %}"></script>
+    <script src="{% static 'js/fullcalendar.min.js' %}"></script>
+    <script src="{% static 'js/es-us.js' %}"></script>
+
+
+
+
+</head>
+
+<body>
+
+    <!-- -->
+    <!-- INICIA EL HEADER -->
+    <div class="row header" >
+        <div class=" col-1">
+            <a href="{% url 'home_page' %}" class="top-menu" >
+                <img src="{% static 'img/owl.svg' %}" alt="Buho" class="img-buho">
+            </a>
+        </div>
+        <div class="col-6">
+            <a href="{% url 'home_page' %}" class="top-menu">
+                <h1>Universidad de Sonora</h1>
+            </a>
+
+        </div>
+    </div>
+    <!-- TERMINA EL HEADER  -->
+    {% block content %}
+   {% calendar %}
+
+    {% endblock %}
+    <!-- INICIA EL FOOTER -->
+    <footer class="fixed-bottom footer">
+        <p>Aqui estaria el footer</p>
+
+    </footer>
+     <!-- TERMINA EL FOOTER  -->
+    <script src="{% static 'js/calendar.js' %}"></script>
+
+</body>
+
+</html>

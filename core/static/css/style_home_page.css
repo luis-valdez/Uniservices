@@ -33,8 +33,11 @@ a:hover { text-decoration : none;
 
 .footer{
     background-color: #FFCD00;
-    font-size: 16px;
+    font-size: 14px;
+    padding:0px;
 }
+
+
 h1{
     font-size: 4vh;
     font-weight: bold;
@@ -103,5 +106,4 @@ h1{
 }
 .nameServ{
     border: #666666;
-
 }

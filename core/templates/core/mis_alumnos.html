@@ -1,0 +1,8 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+{% for estudiante in estudiantes %}
+    {{estudiante.nombre}}  
+{% endfor %}
+{% endblock %}
