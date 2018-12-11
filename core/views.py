@@ -30,15 +30,13 @@ def mi_tutor(request):
     estudiante = usuario.estudiante
     tutor = Tutor.objects.filter(estudiante=estudiante).first()
     usuario_tutor = Usuario.objects.filter(tutor=tutor).first()
-    print(usuario)
-    print(estudiante.nombre)
-    print (tutor)
     return render(request, 'core/mi_tutor.html', {'tutor': tutor, 'usuario_tutor' : usuario_tutor})
 
 def mis_alumnos(request):
     usuario = request.user
     tutor = usuario.tutor
     estudiantes = Estudiante.objects.filter(tutor=tutor)
+    usuario_estudiante = Usuario.objects.filter(estudiantes=estudiantes).first()
     return render(request, 'core/mis_alumnos.html', {'estudiantes': estudiantes})
 
 def agendar_citas(request):
