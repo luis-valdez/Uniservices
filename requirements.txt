@@ -1,5 +1,5 @@
 Django~=2.0.6
 Pillow
 django-crispy_forms
-django-fullcalendar
+-e git+https://github.com/rodrigoamaral/django-fullcalendar.git#egg=django-fullcalendar
 moment
