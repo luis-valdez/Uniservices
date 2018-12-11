@@ -20,5 +20,6 @@ class Estudiante(models.Model):
     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
 
 class Encargado_Servicio(models.Model):
+    division =  models.OneToOneField('core.Division',blank=False, on_delete=models.CASCADE, default=0)
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
     nombre = models.CharField(max_length=100)

@@ -36,15 +36,16 @@
                   {{ servicio.descripcion }}
               </a>
           </div>
+      </div>
     {% endif %}
   {% endfor %} 
+  <div class="col-12 recuadro"></div>
+    <a href="{% url 'nuevo_servicio' %}">
+        Nuevo Servicio
+    </a>
+    </div>
 
-      <div class="col-12 recuadro">
-          <a href="{% url 'nuevo_servicio' %}">
-              Nuevo Servicio
-              <br>
-          </a>
-      </div>
+      
   </div>
 
 

@@ -84,6 +84,7 @@ h1{
 }
 .recuadro{
     background-color: #eaeaea;
+    border-bottom: 1px;
 }
 .center{
     text-align: center;
