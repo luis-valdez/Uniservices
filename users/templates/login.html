@@ -5,15 +5,23 @@
 
 <img src="{% static 'img/logo-unison.png' %}" alt="logo-unison" class="logo-unison">
 <h2>Login</h2>
-<form method="post" class="form-group">
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <form method="post" class="form-group">
         {% csrf_token %}
-           {% for field in form %}
+          {% for field in form %}
             <div class="form-control">
               {{ field.errors }}
-              {{ field.label_tag }}  {{ field }}
-              
+              {{ field.label_tag }}  {{ field }}            
             </div>
-            {% endfor %}
-      <button type="submit" class="btn btn-primary">Inicia sesión</button>
-    </form>
+          {% endfor %}
+          <button type="submit" class="btn btn-primary">Inicia sesión</button>
+      </form>
+    </div>
+    <div class="col-6">
+      <img src="{% static 'img/logo-unison.png' %}" alt="logo-unison">
+    </div>
+  </div>
+</div>
 {% endblock %}

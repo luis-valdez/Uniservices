@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'users',
     'fullcalendar',
     'moment',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 AUTH_USER_MODEL = 'users.Usuario'
 
 MIDDLEWARE = [

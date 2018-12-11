@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+
+<!-- ENCARGADO DE SERVICIO -->
+{% if user.is_authenticated and user.es_encargado_servicio %}
+<div class="container">
+        <div class="row">
+            <div class="col-6">
+                  <p class="text-left">¡Bienvenido, {{ user.username }}!<p>
+             </div>
+            <div class="col-6">
+               <p class="text-right">Administrador de Servicio<p>
+              </div>
+        </div>
+</div>    
+{% endif %}
+<!--TERMINA ENCARGADO DE SERVICIO -->
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-12 titulo-recuardo">
+          <p>Lista de Servicios</p>
+      </div>
+  </div>
+              
+  {% for servicio in servicios %}
+    {% if servicio.encargado == user %}
+      <div class="row">
+          <div class="col-12 recuadro">
+              <a href="{% url 'info_servicio' pk=servicio.pk %}">
+                  {{ servicio.nombre }}
+                  <br>
+                  {{ servicio.descripcion }}
+              </a>
+          </div>
+      </div>
+    {% endif %}
+  {% endfor %} 
+  <div class="col-12 recuadro"></div>
+    <a href="{% url 'nuevo_servicio' %}">
+        Nuevo Servicio
+    </a>
+    </div>
+
+      
+  </div>
+
+
+{% endblock %}

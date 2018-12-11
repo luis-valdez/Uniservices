@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from users.models import Usuario
 
 class Campus(models.Model):
     nombre = models.CharField(max_length=100)
@@ -21,7 +22,8 @@ class Servicio(models.Model):
     descripcion = models.CharField(max_length=100)
     duracion = models.IntegerField()
     capacidad = models.IntegerField()
-    imagen = models.ImageField(null=False, blank=False)
+    imagen = models.ImageField(null=False, blank=False, upload_to = 'media/')
+    encargado = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=0)
 
 
 
